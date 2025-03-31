@@ -1,0 +1,53 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <servlet-class>com.sushant.learning.LifeCycleServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>LifeCycleServlet</servlet-name>
+    <url-pattern>/lifecycle</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ConfigServlet</servlet-name>
+    <servlet-class>com.sushant.learning.ConfigServlet</servlet-class>
+
+    <init-param>
+      <param-name>AppName</param-name>
+      <param-value>My Awesome App</param-value>
+    </init-param>
+
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ConfigServlet</servlet-name>
+    <url-pattern>/config</url-pattern>
+  </servlet-mapping>
+
+  <context-param>
+    <param-name>GlobalMessage</param-name>
+    <param-value>Welcome to my servlet application</param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>com.sushant.learning.AppListener</listener-class>
+  </listener>
+
+  <filter>
+    <filter-name>LoggingFilter</filter-name>
+    <filter-class>com.sushant.learning.LoggingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoggingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+
+</web-app>
